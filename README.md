@@ -452,7 +452,7 @@
 
 <!-- CONFIG: Replace with your Google Apps Script URL -->
 <script>
-  const SHEET_URL = '[YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL](https://script.google.com/macros/s/AKfycbwdZRczbAdIAZSjdNTtSObvPYhflSNc3cos4cUxaerX8VQYQhASPOzLrZ-o_upVOpbr/exec)';
+  const SHEET_URL = '(https://script.google.com/macros/s/AKfycbwdZRczbAdIAZSjdNTtSObvPYhflSNc3cos4cUxaerX8VQYQhASPOzLrZ-o_upVOpbr/exec)';
   const WA_NUMBER = '60176883450'; // Replace with your WhatsApp business number (no +)
   const PRICE_PER_PACK = 100;
   const PACKS_PER_UNIT = 4; // RM100 per 4 packs
