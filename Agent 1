@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Pampers</title>
+</head>
+<body>
+
+<h2>Order Pampers DryPants</h2>
+
+<form id="orderForm">
+  Nama: <input type="text" id="name"><br><br>
+  Phone: <input type="text" id="phone"><br><br>
+  Address: <input type="text" id="address"><br><br>
+
+  Size:
+  <select id="product">
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select><br><br>
+
+  Quantity: <input type="number" id="quantity"><br><br>
+
+  <input type="hidden" id="agent">
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const agent = urlParams.get('agent') || 'DIRECT';
+document.getElementById("agent").value = agent;
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    address: document.getElementById("address").value,
+    product: document.getElementById("product").value,
+    quantity: document.getElementById("quantity").value,
+    total: 100,
+    agent: agent
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwdZRczbAdIAZSjdNTtSObvPYhflSNc3cos4cUxaerX8VQYQhASPOzLrZ-o_upVOpbr/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => alert("Order berjaya dihantar!"));
+});
+</script>
+
+</body>
+</html>
